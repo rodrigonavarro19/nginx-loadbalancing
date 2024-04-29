@@ -1,8 +1,8 @@
-
+version: '3'
 services:
 
-  nginx:
-    container_name: nginx
+  nginx-server:
+    container_name: nginx-server
     image: nginx:1.23.3
     ports:
       - "80:80"
@@ -20,35 +20,35 @@ services:
   frontend1:
     container_name: frontend1
     build:
-      context: ./nginx-front
+      context: ./front
       dockerfile: Dockerfile
 
   frontend2:
     container_name: frontend2
     build:
-      context: ./nginx-front
+      context: ./front
       dockerfile: Dockerfile
 
   frontend3:
     container_name: frontend3
     build:
-      context: ./nginx-front
+      context: ./front
       dockerfile: Dockerfile
 
   backend1:
     container_name: backend1
     build:
-      context: ./nginx
+      context: ./back
       dockerfile: Dockerfile
 
   backend2:
     container_name: backend2
     build:
-      context: ./nginx
+      context: ./back
       dockerfile: Dockerfile
 
   backend3:
     container_name: backend3
     build:
-      context: ./nginx
+      context: ./back
       dockerfile: Dockerfile
