@@ -1,0 +1,54 @@
+
+services:
+
+  nginx:
+    container_name: nginx
+    image: nginx:1.23.3
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - frontend1
+      - frontend2
+      - frontend3
+      - backend1
+      - backend2
+      - backend3
+    command: ["nginx", "-g", "daemon off;"]
+
+  frontend1:
+    container_name: frontend1
+    build:
+      context: ./nginx-front
+      dockerfile: Dockerfile
+
+  frontend2:
+    container_name: frontend2
+    build:
+      context: ./nginx-front
+      dockerfile: Dockerfile
+
+  frontend3:
+    container_name: frontend3
+    build:
+      context: ./nginx-front
+      dockerfile: Dockerfile
+
+  backend1:
+    container_name: backend1
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+
+  backend2:
+    container_name: backend2
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+
+  backend3:
+    container_name: backend3
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile

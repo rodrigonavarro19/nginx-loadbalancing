@@ -1,0 +1,27 @@
+<h1>Lista de Usuarios</h1>
+
+<table class="table">
+    <thead>
+      <tr class="table-primary">
+        <th scope="col">Id</th>
+        <th scope="col">Nombres</th>
+        <th scope="col">Apellidos</th>
+        <th scope="col">Edad</th>
+        <th scope="col">Email</th>
+      </tr>
+    </thead>
+    <tbody>
+        @for (item of usuarios; track $index) {
+            <tr>
+              <th>{{item.id}}</th>
+              <td>{{item.nombres}}</td>
+              <td>{{item.apellidos}}</td>
+              <td>{{item.edad}}</td>
+              <td>{{item.email}}</td>
+            </tr>
+
+
+        }
+     
+    </tbody>
+  </table>
