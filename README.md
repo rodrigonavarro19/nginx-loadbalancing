@@ -11,13 +11,13 @@ Docker Compose
 1. Clona este repositorio en tu máquina local:
 
 ```bash
-git clone https://github.com/tuusuario/prueba-nginx-docker-compose.git
+git clone https://github.com/rodrigonavarro19/nginx-loadbalancing.git
 ```
 
 2. Navega al directorio del proyecto:
 
 ```bash
-cd prueba-nginx-docker-compose
+cd /nginx-loadbalancing
 ```
 
 3. Inicia los contenedores utilizando Docker Compose:
